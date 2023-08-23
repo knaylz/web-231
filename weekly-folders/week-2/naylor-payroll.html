@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>WEB 231 - Enterprise JavaScript I</title>
+       
+       <!-- Meta Tags -->
+        <meta charset="UTF-8">
+        <meta name="description" content="Homework Assignment 2.3">
+        <meta name="keywords" content="web development homework, web development assignment">
+        <meta name="robots" content="nofollow">
+
+       <!-- External Style Sheets -->
+        <link rel="stylesheet" type="text/css" href="naylor-payroll.css">
+        <link rel="stylesheet" type="text/css" href="../../site.css">
+        <link rel="stylesheet" type="text/css" href="../../global.css">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <!-- External Style Sheets -->
+        <link rel="stylesheet" type="text/css" href="naylor-payroll.css">
+        <link rel="stylesheet" type="text/css" href="../../site.css">
+        <link rel="stylesheet" type="text/css" href="../../global.css">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&&display=swap" rel="stylesheet">
+
+        <div id="container">
+            <h1 id="payroll-header">Payroll System</h1>
+        <!--Employee Ludgwig HTML-->
+            <h3>Employee record 1</h3>
+            <ul>
+                <li id="txtFirstNameLudgwig"></li>
+                <li id="txtLastNameLudgwig"></li>
+                <li id="txtAddressLudgwig"></li>
+                <li id="txtHireDateLudgwig"></li>
+                <li id="txtPayRateLudgwig"></li>                                                                          
+            </ul>
+        <!--Employee Bach HTML-->
+            <h3>Employee record 2</h3>
+            <ul>
+                <li id="txtFirstNameBach"></li>
+                <li id="txtLastNameBach"></li>
+                <li id="txtAddressBach"></li>
+                <li id="txtHireDateBach"></li>
+                <li id="txtPayRateBach"></li>                                                                          
+            </ul>
+        <!--Employee Mozart HTML-->
+            <h3>Employee record 3</h3>
+            <ul>
+                <li id="txtFirstNameMozart"></li>
+                <li id="txtLastNameMozart"></li>
+                <li id="txtAddressMozart"></li>
+                <li id="txtHireDateMozart"></li>
+                <li id="txtPayRateMozart"></li>                                                                          
+            </ul>
+            <p><a class="return-home" href="../../index.html">Return</a></p>
+        </div>
+
+        <script>
+            // Employee Ludgwig Variables
+            let firstNameLudgwig = "Ludgwig";
+            let lastNameLudgwig = "Beethoven";
+            let addressLudgwig = "505 main street";
+            let hireDateLudgwig = "12/9/2020";
+            let payRateLudgwig = 18.9.toFixed(1);
+
+            // Employee Bach Variables
+            let firstNameBach = "Johann";
+            let lastNameBach = "Bach";
+            let addressBach = "512 main street";
+            let hireDateBach = "12/9/2020";
+            let payRateBach = 25.5.toFixed(1);
+        
+            //Employee Mozart
+            let firstNameMozart = "Wolfgang";
+            let lastNameMozart = "Mozart";
+            let addressMozart = "600 main street";
+            let hireDateMozart = new Date("12/9/2020").toLocaleDateString("en-US");
+            let payRateMozart = 50.1.toFixed(1);
+
+            //Employee Ludgwig
+            document.getElementById("txtFirstNameLudgwig").innerHTML = firstNameLudgwig;
+            document.getElementById("txtLastNameLudgwig").innerHTML = lastNameLudgwig;
+            document.getElementById("txtAddressLudgwig").innerHTML = addressLudgwig;
+            document.getElementById("txtHireDateLudgwig").innerHTML = hireDateLudgwig;
+            document.getElementById("txtPayRateLudgwig").innerHTML = payRateLudgwig;
+
+            //Employee Bach
+            document.getElementById("txtFirstNameBach").innerHTML = firstNameBach;
+            document.getElementById("txtLastNameBach").innerHTML = lastNameBach;
+            document.getElementById("txtAddressBach").innerHTML = addressBach;
+            document.getElementById("txtHireDateBach").innerHTML = hireDateBach;
+            document.getElementById("txtPayRateBach").innerHTML = payRateBach;
+
+            //Employee Mozart
+            document.getElementById("txtFirstNameMozart").innerHTML = firstNameMozart;
+            document.getElementById("txtLastNameMozart").innerHTML = lastNameMozart;
+            document.getElementById("txtAddressMozart").innerHTML = addressMozart;
+            document.getElementById("txtHireDateMozart").innerHTML = hireDateMozart;
+            document.getElementById("txtPayRateMozart").innerHTML = payRateMozart;
+        </script>
+    </body>
+</html>
