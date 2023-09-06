@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>WEB 231 - Enterprise JavaScript I</title>
+       
+       <!-- Meta Tags -->
+        <meta charset="UTF-8">
+        <meta name="description" content="Homework Assignment 4">
+        <meta name="keywords" content="web development homework, web development assignment">
+        <meta name="robots" content="nofollow">
+
+    </head>
+    <body>
+       <!-- External Style Sheets -->
+       <link rel="stylesheet" type="text/css" href="naylor-number-game.css">
+       <link rel="stylesheet" type="text/css" href="../../site.css">
+       <link rel="stylesheet" type="text/css" href="../../global.css">
+       <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&&display=swap" rel="stylesheet">
+
+       <main class="container" id="container">
+            <h1 class="app-header">Welcome to the numbers game!</h1>
+            <div id="card" class="card">
+                <div class="card-title">Pick a number between 1 and 10</div>
+                <div class="card-content"></div>
+                    <div class="form">
+                        <div class="form-field">
+                            <label>Guess the number:</label>
+                            <input type="text" id="txtMyNumber">
+                        </div>
+                        <div class="form-field">
+                            <button id="btn">Submit</button>
+                        </div>
+                    </div>
+            </div>        
+            <div id="card" class="card">
+                <div class="card-title">Results</div>
+                <div class="card-content" id="number-result"></div>
+            </div>
+       </main>
+       <a class="return-home">Return</a>
+       <script type="text/javascript">
+       
+         // Generate random number 1 through 10.
+         const rnd = Math.floor((Math.random() * 10) + 1);     
+
+       // Register an onclick event using the document.getElementById(“id”).onclick function.
+         document.getElementById("btn").onclick = function(){
+
+       // Capture the inputted value from txtMyNumber, assign it to a variable named myNumber.
+            let myNumber = document.getElementById("txtMyNumber").value;
+
+       // Compare input to random number.
+       if(rnd == myNumber){
+          document.getElementById("number-result").innerHTML = "Congratulations! You picked the right number!";
+       } else if(myNumber > rnd) {
+          document.getElementById("number-result").innerHTML = "The number is less than " + myNumber;
+       } else if(myNumber < rnd) {
+          document.getElementById("number-result").innerHTML = "The number is more than " + myNumber;
+       }
+
+       else {
+        console.log("variable number-result is undefined.");
+       }
+      }
+       </script>
+    </body>
+</html>

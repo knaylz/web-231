@@ -1,0 +1,40 @@
+.container {
+    text-align: left;
+}
+
+.app-header {
+    text-align: center;
+}
+
+.card {
+    margin: 50px 20%;
+}
+
+.return-home {
+    margin: 0px 100px 50px 100px;
+}
+
+.form {
+    margin: 0 50px;
+}
+
+#btn {
+    border: none;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    padding: 15px 50px;
+    color: #fff;
+    background-color: #3C275A;
+}
+
+#card-title {
+    font-size: 28px;   
+}
+
+.card-content {
+    font-size: 28px;
+}
