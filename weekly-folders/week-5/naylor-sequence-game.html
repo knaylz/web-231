@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>WEB 231 - Enterprise JavaScript I</title>
+       
+       <!-- Meta Tags -->
+        <meta charset="UTF-8">
+        <meta name="description" content="Homework Assignment 5">
+        <meta name="keywords" content="web development homework, web development assignment">
+        <meta name="robots" content="nofollow">
+
+    </head>
+    <body>
+       <!-- External Style Sheets -->
+       <link rel="stylesheet" type="text/css" href="naylor-sequence-game.css">
+       <link rel="stylesheet" type="text/css" href="../../site.css">
+       <link rel="stylesheet" type="text/css" href="../../global.css">
+       <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&&display=swap" rel="stylesheet">
+
+       <main class="container" id="container">
+            <h1 class="app-header">Welcome to the sequence game!</h1>
+            <div id="card" class="card">
+                <div class="card-title">Sequence Selection Form</div>
+                <div class="card-content"></div>
+                    <div class="form">
+                        <div class="form-field">
+                            <label for="sequence">Choose a number sequence:</label>
+                            <select id="sequence" class="drop-down-menu">
+                                <option value="select">--Select--</option>
+                                <option value="fibonacci">Fibonacci Sequence</option>
+                                <option value="evenNumbers">Even Numbers</option>
+                                <option value="oddNumbers">Odd Numbers</option>
+                            </select>
+                        </div>
+                        <div class="form-field">
+                            <button id="btnDisplaySequence">Display Sequence</button>
+                        </div>
+                    </div>
+            </div>        
+            <div id="card" class="card">
+                <div class="card-title">Sequence Results</div>
+                <div class="card-content" id="number-result"></div>
+            </div>
+       </main>
+       <a class="return-home">Return</a>
+       <script type="text/javascript">
+       
+       // Register an onclick event for btnDisplaySequence.
+       document.getElementById("btnDisplaySequence").onclick = function() {
+
+       // Capture the value from the select list and assign it to a variable named choice.
+       let choice = document.getElementById("sequence").value;
+
+       // Using if... else if...else if...else, compare choice against the string values: fibonacci, even, and odd.
+
+       
+        if(choice === "fibonacci") {
+            let num1 = 0  //Initialize this variable, which was declared above.
+            let num2 = 1  //Initialize this variable which was declared above.
+            let next;
+            let fibonacciSequenceText = "";
+            0,1,1,2,3,5,8
+            do {
+                fibonacciSequenceText = fibonacciSequenceText + num1 + ", ";
+                next = num1 + num2;
+                num1 = num2;
+                num2 = next;
+            }
+            while(num1 < 40);
+            fibonacciSequenceText = fibonacciSequenceText.slice(0, -2);
+            document.getElementById("number-result").innerHTML = fibonacciSequenceText;
+        }
+        else if(choice === "evenNumbers") {
+            let index = 1;  //It starts as a 1 in this case per assignment. Keep these outside the loop so we can mutate it below in the loop; this is how it resets to zero.
+            let evenText = "";  //It starts as a blank. Keep these outside the loop so we can mutate it below in the loop; this is how it resets to blank.
+            do {
+                if((index % 2) === 0){ //**** This is using Modelo Division. Study this more. ****
+                    evenText = evenText + index + ", "; //Gives it a comma and space, but we need a slice.
+                }
+                index = index + 1; //Counts up by 1 at the end of every loop. Note JS works from top to bottom.
+            }
+            while(index < 20);  //This means it will only go up to 20, the requirement for the assignment. Can also be just i.
+
+            evenText = evenText.slice(0, -2);
+            document.getElementById("number-result").innerHTML = evenText;
+        }
+        else if (choice === "oddNumbers") {
+            let index = 1;  //It starts as a 1 in this case per assignment. Keep these outside the loop so we can mutate it below in the loop; this is how it resets to zero.
+            let oddText = "";  //It starts as a blank. Keep these outside the loop so we can mutate it below in the loop; this is how it resets to blank.
+
+            do {
+              if((index % 2) === 1){  //**** This is using Modelo Division. Study this more. ****
+                oddText = oddText + index + ", ";  //Gives it a comma and space, but we need a slice.
+              }
+              index = index + 1; //Counts up by 1 at the end of every loop. Note JS works from top to bottom.
+            }
+            while(index < 20);
+
+            oddText = oddText.slice(0, -2);
+            document.getElementById("number-result").innerHTML = oddText;
+        }
+        else {
+            alert("Invalid Entry");
+        }
+
+       }
+       </script>
+    </body>
+</html>
