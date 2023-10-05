@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>WEB 231 - Enterprise JavaScript I</title>
+       
+       <!-- Meta Tags -->
+        <meta charset="UTF-8">
+        <meta name="description" content="Homework Assignment 7">
+        <meta name="keywords" content="web development homework, web development assignment">
+        <meta name="robots" content="nofollow">
+
+    </head>
+    <body>
+       <!-- External Style Sheets -->
+       <link rel="stylesheet" type="text/css" href="naylor-alphabet-game.css">
+       <link rel="stylesheet" type="text/css" href="../../site.css">
+       <link rel="stylesheet" type="text/css" href="../../global.css">
+       <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&&display=swap" rel="stylesheet">
+
+       <div class="container" id="container">
+        <h1 class="app-header">Welcome to the Alphabet Game!</h1>
+        <div class="card">
+            <div class="card-title">Alphabet Number Form</div>
+            <div class="card-content">
+                <div class="form">
+                    <div class="form-field">
+                        <label for="txtPosition">Alphabet Letter Position:</label>
+                        <input class="input" id="txtPosition">
+                    </div>
+
+                    <div class="form-field">
+                        <button id="btnFindLetter" class="btn btn-primary full-width">Find Letter</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">Letters in the Alphabet</div>
+            <div class="card-content" id="alphabet-output"></div>
+        </div>
+
+<a href="">Return</a>
+
+        <div class="card">
+            <div class="card-title">Results</div>
+            <div class="card-content" id="alphabet-letter"></div>
+        </div>
+
+   </main>
+   <script type="text/javascript">
+      const alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+      
+      let alphabetOutput = "";
+
+      for(let letter in alphabet) {
+        alphabetOutput += alphabet[letter] + ", ";
+      }
+
+      alphabetOutput = alphabetOutput.slice(0, -2);
+
+      document.getElementById("alphabet-output").innerHTML = alphabetOutput;
+
+      document.getElementById("btnFindLetter").onclick = function() {
+        let pos = document.getElementById("txtPosition").value;
+
+        let letter = alphabet[pos-1];
+
+        if(letter === undefined) {
+            document.getElementById("alphabet-letter").innerHTML = "There are not " + pos + " letters in the alphabet.";
+        }
+        else {
+            document.getElementById("alphabet-letter").innerHTML = letter + " is at position " + pos + " in the alphabet.";
+        }
+      }
+    </script>
+    </body>
+</html>

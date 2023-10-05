@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>WEB 231 - Enterprise JavaScript I</title>
+       
+       <!-- Meta Tags -->
+        <meta charset="UTF-8">
+        <meta name="description" content="Homework Assignment 5">
+        <meta name="keywords" content="web development homework, web development assignment">
+        <meta name="robots" content="nofollow">
+
+    </head>
+    <body>
+       <!-- External Style Sheets -->
+       <link rel="stylesheet" type="text/css" href="naylor-in-n-out-books.css">
+       <link rel="stylesheet" type="text/css" href="../../site.css">
+       <link rel="stylesheet" type="text/css" href="../../global.css">
+       <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&&display=swap" rel="stylesheet">
+
+       <main class="container" id="container">
+            <h1 class="app-header">Welcome to In-N-Out Books!</h1>
+            <div class="card">
+                <div class="card-title">My Favorites</div>
+                <div class="card-content">
+                    <div class="form">
+                        <div class="form-field">
+                            <label for="favoriteList">Choose a listing:</label>
+                            <select id="favoriteList" class="drop-down-menu">
+                                <option value="select">--Select--</option>
+                                <option value="books">Top 3 Favorite Books</option>
+                                <option value="authors">Top 3 Favorite Authors</option>
+                            </select>
+                        </div>
+
+                        <div class="form-field">
+                            <button id="btnDisplayListing" class="btn btn-primary full-width">Display Listing</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" id="favorite-books">
+                <div class="card-title">Top 3 Favorite Books</div>
+                <div class="card-content">
+                    <table>
+                        <tr>
+                            <th>ISBN</th>
+                            <th>Title</th>
+                            <th>Pages</th>
+                        </tr>
+                        <tr>
+                            <td>ISBN 1</td>
+                            <td>Title 1</td>
+                            <td>Pages 1</td>
+                        </tr>
+                        <tr>
+                            <td>ISBN 2</td>
+                            <td>Title 2</td>
+                            <td>Pages 2</td>
+                        </tr>
+                        <tr>
+                            <td>ISBN 3</td>
+                            <td>Title 3</td>
+                            <td>Pages 3</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+
+            <div class="card" id="favorite-authors">
+                <div class="card-title">Top 3 Favorite Authors</div>
+                <div class="card-content">
+                    <table>
+                        <tr>
+                            <th>Name1</th>
+                        </tr>
+                        <tr>
+                            <td>Name2</td>
+                        </tr>
+                        <tr>
+                            <td>Name3</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+       <a class="return-home">Return</a>
+       </main>
+       <script type="text/javascript">
+   
+//Create 3 object literals for your top 3 favorite books and assign them to three separate variables.
+
+       let book1 = {
+        isbn: 456,
+        title: "The Great Gatby",
+        pages: 300
+       }
+
+       let book2 = {
+        isbn: 789,
+        title: "Wuthering Heights",
+        pages: 100
+       }
+
+       let book3 = {
+        isbn: 123,
+        title: "The Dead Romantics",
+        pages: 800
+       }
+
+//Create 3 object literals for your top 3 favorite authors and assign them to three separate variables.
+
+       let auth1 = {
+        name: "F. Scott Fitzgerald",
+        genre: "Fiction"
+       }
+
+       let auth2 = {
+        name: "Emily Bronte",
+        genre: "Fiction"
+       }
+
+       let auth3 = {
+        name: "Peter Thomas",
+        genre: "Fiction",
+       }
+
+//Using document.getElementById assign the "favorite"
+
+       document.getElementById("textBook1-isbn").innerHTML = book1.isbn;
+       document.getElementById("textBook1-title").innerHTML = book1.title;
+       document.getElementById("textBook1-pages").innerHTML = book1.pages;
+       
+       document.getElementById("textBook2-isbn").innerHTML = book2.isbn;
+       document.getElementById("textBook2-title").innerHTML = book2.title;
+       document.getElementById("textBook2-pages").innerHTML = book2.pages;
+
+       document.getElementById("textBook3-isbn").innerHTML = book3.isbn;
+       document.getElementById("textBook3-title").innerHTML = book3.title;
+       document.getElementById("textBook3-pages").innerHTML = book3.pages;
+
+       document.getElementById("txtAuth1").innerHTML = book1.name;
+       document.getElementById("txtAuth1").innerHTML = book1.genre;
+
+       document.getElementById("txtAuth2").innerHTML = book2.name;
+       document.getElementById("txtAuth2").innerHTML = book2.genre;
+
+       document.getElementById("txtAuth3").innerHTML = book3.name;
+       document.getElementById("txtAuth3").innerHTML = book3.genre;
+
+//Using document.getElementById, assign "favorite-books" div to a variable named books.      
+
+       let books = document.getElementById("favorite-books");
+
+//Set the books style.display to none.     
+
+       books.style.display = "none";
+
+//Using document.getElementById, assign "favorite-authors" div to a variable named authors.      
+
+       let authors = document.getElementById("favorite-authors");
+
+//Set the authors style.display to none.            
+
+       authors.style.display = "none";
+
+// Register an onclick event for btnDisplayListing.
+       document.getElementById("btnDisplayListing").onclick = function() {
+
+// Capture the value from the select list and assign it to a variable named choice.       
+        let choice = document.getElementByID("favoriteList").value;
+       }
+
+// Using if... else statement.
+
+ if (choice === "favoriteBooks") {
+        document.getElementById('books').style.display = 'block';
+        document.getElementById('authors').style.display = 'none'
+ }
+ else (choice === "favoriteAuthors") {
+        document.getElementById('books').style.display = 'none';
+        document.getElementById('authors').style.display = 'block'
+ }
+        
+</script>
+    </body>
+</html>
