@@ -1,0 +1,66 @@
+.container {
+    text-align: left;
+    margin: 0px 20%!important;
+}
+
+.app-header {
+    text-align: center;
+}
+
+.card {
+    margin: 50px 20%;
+}
+
+.return-home {
+    margin: 0px 100px 50px 100px;
+}
+
+.form {
+    margin: 0 50px;
+}
+
+#btnDealCards {
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    padding: 15px 70px;
+    color: #fff;
+    background-color: #3C275A;
+}
+
+#card-title {
+    font-size: 28px;   
+}
+
+.card-content {
+    font-size: 28px;
+    text-align: center;
+}
+
+.drop-down-menu {
+
+}
+
+.form-results {
+    text-align: center;
+    font-size: 26px;
+}
+
+.btn-primary {
+    border-radius: 10px;
+    border: solid 5 px black;
+}
+
+th {
+    padding: 25px;
+    background-color: #4F3674;
+    color: #fff;
+}
+
+tr {
+    padding: 25px;
+}

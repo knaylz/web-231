@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>WEB 231 - Enterprise JavaScript I</title>
+       
+       <!-- Meta Tags -->
+        <meta charset="UTF-8">
+        <meta name="description" content="Homework Assignment 7">
+        <meta name="keywords" content="web development homework, web development assignment">
+        <meta name="robots" content="nofollow">
+
+    </head>
+    <body>
+       <!-- External Style Sheets -->
+       <link rel="stylesheet" type="text/css" href="naylor-final-card-game.css">
+       <link rel="stylesheet" type="text/css" href="../../site.css">
+       <link rel="stylesheet" type="text/css" href="../../global.css">
+       <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&&display=swap" rel="stylesheet">
+
+       <div class="container" id="container">
+        <h1 class="app-header">Welcome to the Card Game!</h1>
+        <div class="card">
+            <div class="card-title">Card Dealer</div>
+            <div class="card-content">
+                <div class="form">
+                    <div class="form-field">
+                        <button id="btnDealCards" class="btn btn-primary full-width">Deal Cards</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<a href="">Return</a>
+
+<div class="card">
+    <div class="card-title">Shuffled Cards</div>
+    <div class="card-content" id="alphabet-output"></div>
+</div>
+
+   </main>
+   
+   <script type="text/javascript">
+   class Card {
+            constructor(face, suit){
+                this.face = face;
+                this.suit = suit;
+            }
+          }
+
+          class Dealer {
+            constructor(){
+              this.CARD_COUNT = 52;
+              this.cards = [];
+              this.faces = ["A","2","3","4","5","6","7","8","9","10","J","Q","K"];
+              this.suits = ["Hearts","Diamonds","Clubs","Spades"];
+              
+              this.getDeckOfCards();
+            }
+
+            getDeckOfCards() {
+              for(let count = 0; count < this.CARD_COUNT; count++) {
+                this.cards.push(new Card(this.faces[count%13], this.suits[Math.floor(count/13)]));
+              }
+            }
+
+            shuffle() {
+              for(let firstCard = 0; firstCard < this.CARD_COUNT; firstCard++) {
+                let secondCard = Math.floor(Math.random() * this.CARD_COUNT);
+                let tempCard = this.cards[firstCard];
+
+                this.cards[firstCard] = this.cards[secondCard];
+                this.cards[secondCard] = tempCard;
+              }
+            }
+          }
+
+          function buildPlayingCard(card, suitIcon, faceColor, suitColor) {
+            return(
+              "<div class=\"card\">"+
+                "<div class=\"card-title\" style=\"text-align: left; font-size: 20px; padding-left: 10px; color: "+ `${faceColor}` +"\">"+
+                `${card.face}`+
+                "</div>"+
+                "<div class=\"card-content\">"+
+                  "<span class=\""+ `${suitIcon}` +"\" style =\"color: "+ `${suitColor}` +"\">"+
+                  "</span>"+
+                "</div>"+
+              "</div>");
+          }
+
+          document.getElementById("btnDealCards").onclick = function() {
+            let dealer = new Dealer();
+
+            dealer.shuffle();
+            
+            let cardOutputWithIcon = "";
+            for(let card of dealer.cards) {
+              switch(card.suit){
+                case "Hearts":
+                  cardOutputWithIcon += buildPlayingCard(card, "mdi mdi-heart", "red", "red");
+                  break;
+                case "Diamonds":
+                  cardOutputWithIcon += buildPlayingCard(card, "mdi mdi-cards-diamond", "red", "red");
+                  break;
+                case "Clubs":
+                  cardOutputWithIcon += buildPlayingCard(card, "mdi mdi-cards-club", "black", "black");
+                  break;
+                case "Spades":
+                  cardOutputWithIcon += buildPlayingCard(card, "mdi mdi-cards-spade", "black", "black");
+                  break;
+              }
+            }
+
+            document.getElementById("playing-card-container").innerHTML = cardOutputWithIcon;
+          }
+  </script>
+ </body>
+</html>
